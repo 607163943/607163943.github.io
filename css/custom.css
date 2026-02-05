@@ -1,6 +1,22 @@
 /* 浅色模式：全局卡片背景 */
 :root {
-  --card-bg: rgba(255, 255, 255, 0.9); /* 你想要的颜色/透明度 */
+  --card-bg: rgba(255, 255, 255, 0.95);
+  /* 你想要的颜色/透明度 */
+}
+
+.card-widget {
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* 更小的光晕 */
+.recent-post-item:hover {
+  /* 清新天蓝（稍微偏青） */
+  box-shadow: 0 0 28px rgba(77, 196, 255, .55) !important;
+}
+
+.card-widget:hover {
+  /* 清新天蓝（稍微偏青） */
+  box-shadow: 0 0 28px rgba(77, 196, 255, .55) !important;
 }
 
 /* 浅色模式背景图 */
@@ -10,10 +26,26 @@
 
 /* 深色模式：全局卡片背景 */
 [data-theme='dark'] {
-  --card-bg: rgba(35, 37, 48, 0.85);
+  --card-bg: rgba(18, 18, 18, 0.85);
 }
 
 /* 深色模式背景图 */
 [data-theme='dark'] #web_bg {
   background: url("./../images/bg-dark.jpg") center center / cover no-repeat fixed !important;
+}
+
+[data-theme='dark'] .social-icon i {
+  color: #e9e9ea !important;
+}
+
+[data-theme='dark'] .card-widget {
+  background: rgba(34, 34, 34, 0.8) !important;
+}
+
+[data-theme='dark'] .recent-post-item:hover {
+  box-shadow: 0 0 28px rgba(24, 144, 255, .55) !important;
+}
+
+[data-theme='dark'] .card-widget:hover {
+  box-shadow: 0 0 28px rgba(24, 144, 255, .55) !important;
 }

@@ -7,32 +7,42 @@
     const sec = root.querySelector(".sec");
     if (!hour || !min || !sec) return;
 
-    // 避免 PJAX 重复绑定导致多个 setInterval
-    if (root.__clockTimer) clearInterval(root.__clockTimer);
+    // 避免 PJAX 重复绑定
+    if (root.__clockRAF) cancelAnimationFrame(root.__clockRAF);
 
-    const setClock = () => {
+    const tick = () => {
+      // 如果元素已不在 DOM（PJAX 切页），停止动画
+      if (!document.body.contains(root)) {
+        root.__clockRAF = null;
+        return;
+      }
+
       const now = new Date();
-      const hh = now.getHours() * 30;
-      const mm = now.getMinutes() * DEG;
-      const ss = now.getSeconds() * DEG;
+      const h = now.getHours() % 12;
+      const m = now.getMinutes();
+      const s = now.getSeconds();
+      const ms = now.getMilliseconds();
 
-      hour.style.transform = `rotateZ(${hh + mm / 12}deg)`;
+      const ss = (s + ms / 1000) * DEG;
+      const mm = (m + s / 60 + ms / 60000) * DEG;
+      const hh = (h + m / 60 + s / 3600 + ms / 3600000) * 30;
+
+      hour.style.transform = `rotateZ(${hh}deg)`;
       min.style.transform = `rotateZ(${mm}deg)`;
       sec.style.transform = `rotateZ(${ss}deg)`;
+
+      root.__clockRAF = requestAnimationFrame(tick);
     };
 
-    setClock();
-    root.__clockTimer = setInterval(setClock, 1000);
+    tick();
   }
 
   function boot() {
-    // widget.yml 里我们给的是 #widget-clock + .analog-clock-widget
     document
       .querySelectorAll("#widget-clock .analog-clock-widget")
       .forEach(initOneClock);
   }
 
   document.addEventListener("DOMContentLoaded", boot);
-  // Butterfly 常见为 PJAX 站点，切页后需要再初始化一次
   document.addEventListener("pjax:complete", boot);
 })();
