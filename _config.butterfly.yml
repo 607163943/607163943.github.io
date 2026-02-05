@@ -31,7 +31,7 @@ menu:
 
 code_blocks:
   # Code block theme: darker / pale night / light / ocean / false
-  theme: pale night
+  theme: darker
   macStyle: false
   # Code block height limit (unit: px)
   height_limit: 200
@@ -70,13 +70,13 @@ default_top_img: /images/default-top.jpg
 
 # The banner image of index page
 index_img:
-  - /images/index-top.jpg
+  - https://607163943.github.io/images/index-top.jpg
 
 # The banner image of archive page
 archive_img:
 
 # Note: tag page, not tags page
-tag_img:
+tag_img: https://607163943.github.io/images/tag.webp
 
 # The banner image of tag page, you can set the banner image for each tag
 # Format:
@@ -84,7 +84,7 @@ tag_img:
 tag_per_img:
 
 # Note: category page, not categories page
-category_img:
+category_img: https://607163943.github.io/images/category.jpg
 
 # The banner image of category page, you can set the banner image for each category
 # Format:
@@ -92,12 +92,12 @@ category_img:
 category_per_img:
 
 # The background image of footer
-footer_img: false
+footer_img: transparent
 
 # Website Background
 # Can set it to color, image URL or an array containing colors and/or image URLs
 # If an array is provided, a random background will be selected from the array on each load
-background: /images/bg.png
+background: url('')
 
 cover:
   # Disable the cover or not
@@ -107,6 +107,11 @@ cover:
   # When cover is not set, the default cover is displayed
   default_cover:
     # - xxx.jpg
+    - https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg.png
+    - https://607163943.github.io/images/cover.jpeg
+    - https://607163943.github.io/images/cover2.jpg
+    - https://607163943.github.io/images/cover3.png
+
 
 # Replace Broken Images
 error_img:
@@ -128,11 +133,11 @@ post_meta:
     # Choose: date / relative
     date_format: date
     categories: true
-    tags: false
+    tags: true
     label: true
   post:
     # Choose: left / center
-    position: left
+    position: center
     # Choose: created / updated / both
     date_type: both
     # Choose: date / relative
@@ -154,7 +159,7 @@ index_top_img_height:
 
 # The subtitle on homepage
 subtitle:
-  enable: false
+  enable: true
   # Typewriter Effect
   effect: true
   # Customize typed.js
@@ -170,6 +175,10 @@ subtitle:
   source: false
   # If you close the typewriter effect, the subtitle will only show the first line of sub
   sub:
+    - 这是幻想的博客
+    - 正在学习前端、Java中
+    - 即使文章写的难看也要坚持
+    - 人生何处不青山
 
 # Article layout on the homepage
 # 1: Cover on the left, info on the right
@@ -187,7 +196,7 @@ index_layout: 3
 # 3: auto_excerpt (default)
 # false: do not show the article introduction
 index_post_content:
-  method: 3
+  method: 2
   # If you set method to 2 or 3, the length need to config
   length: 500
 
@@ -264,12 +273,12 @@ footer:
   nav:
   owner:
     enable: true
-    since: 2025
+    since: 2026
   # Copyright of theme and framework
   copyright:
-    enable: true
-    version: true
-  custom_text:
+    enable: false
+    version: false
+  custom_text: 欢迎来到我的 <a href="https://607163943.github.io/">博客</a>!
 
 # --------------------------------------
 # Aside Settings
@@ -289,15 +298,15 @@ aside:
     category: true
   card_author:
     enable: true
-    description:
+    description: 正在学习前端、Java中
     button:
       enable: true
       icon: fab fa-github
-      text: Follow Me
-      link: https://github.com/xxxxxx
+      text: 来看看！
+      link: https://github.com/607163943
   card_announcement:
-    enable: true
-    content: This is my Blog
+    enable: false
+    content: 欢迎来到我的博客！
   card_recent_post:
     enable: true
     # If set 0 will show all
@@ -323,7 +332,7 @@ aside:
     enable: true
     # If set 0 will show all
     limit: 40
-    color: false
+    color: true
     custom_colors:
     # Order of tags, random/name/length
     orderby: random
@@ -331,7 +340,7 @@ aside:
     order: 1
     sort_order:
   card_archives:
-    enable: true
+    enable: false
     # Type: monthly / yearly
     type: monthly
     # Eg: YYYY年MM月
@@ -398,7 +407,7 @@ darkmode:
   end:
 
 # Show scroll percent in scroll-to-top button
-rightside_scroll_percent: false
+rightside_scroll_percent: true
 
 # Don't modify the following settings unless you know how they work
 # Choose: readmode,translate,darkmode,hideAside,toc,chat,comment
@@ -434,7 +443,7 @@ copy:
 
 # Need to install the hexo-wordcount plugin
 wordcount:
-  enable: false
+  enable: true
   # Display the word count of the article in post meta
   post_wordcount: true
   # Display the time to read the article in post meta
@@ -922,7 +931,7 @@ lightbox:
 
 # Series
 series:
-  enable: false
+  enable: true
   # Order by title or date
   orderBy: 'title'
   # Sort of order. 1, asc for ascending; -1, desc for descending
@@ -938,9 +947,9 @@ abcjs:
 # Mermaid
 # https://github.com/mermaid-js/mermaid
 mermaid:
-  enable: false
+  enable: true
   # Write Mermaid diagrams using code blocks
-  code_write: false
+  code_write: true
   # built-in themes: default / forest / dark / neutral
   theme:
     light: default
@@ -1003,8 +1012,8 @@ aplayerInject:
 # https://github.com/polonel/SnackBar
 # position: top-left / top-center / top-right / bottom-left / bottom-center / bottom-right
 snackbar:
-  enable: false
-  position: bottom-left
+  enable: true
+  position: bottom-center
   # The background color of Toast Notification in light mode and dark mode
   bg_light: '#49b1f5'
   bg_dark: '#1f1f1f'
@@ -1064,8 +1073,13 @@ css_prefix: true
 inject:
   head:
     # - <link rel="stylesheet" href="/xxx.css">
-  bottom:
+    - <link rel="stylesheet" href="/css/custom.css">
+    - <link rel="stylesheet" href="/css/clock-widget.css">
+    - <script src="/CDN/hexo_githubcalendar.js"></script>
+  bottom: 
     # - <script src="xxxx"></script>
+    - <script src="/js/index-top.js"></script>
+    - <script src="/js/clock-widget.js"></script>
 
 # CDN Settings
 # Don't modify the following settings unless you know how they work

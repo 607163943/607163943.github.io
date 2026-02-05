@@ -4,10 +4,10 @@
 
 # Site
 title: 幻想
-subtitle: '欢迎来到我的博客'
-description: '正在学习前端、Java中'
+subtitle: 欢迎来到我的博客
+description: 正在学习前端、Java中
 keywords: '前端,Java,博客,生活,技术'
-author: 607163943
+author: 幻想
 language: zh-CN
 timezone: 'Asia/Shanghai'
 email: q45962219@126.com
@@ -55,6 +55,7 @@ prismjs:
   preprocess: true
   line_number: true
   tab_replace: ''
+  exclude_languages: ['mermaid']
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -109,3 +110,28 @@ deploy:
   branch: main # 默认使用 master 分支(Github现在改名为main分支)
   message: Update Hexo Static Content # 自定义的此次部署更新的说明
 
+# hexo-github-canlendar
+# 贡献度热力图插件 https://github.com/Barry-Flynn/hexo-github-calendar
+githubcalendar:
+  enable: true
+  enable_page: /              # 生效页面：/ (首页) 或 /about/ 或你自定义页面
+  user: 607163943
+  layout:
+    type: id
+    name: recent-posts
+    index: 0
+  githubcalendar_html: '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><div id="github_loading" style="width:10%;height:100%;margin:0 auto;display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></div><div id="github_container"></div></div>'
+
+  pc_minheight: 280px
+  mobile_minheight: 0px
+
+  # 颜色梯度（可以按你主题色改）
+  color: "['#ebedf0', '#a2f7af', '#6ce480', '#54ad63', '#469252', '#31753c', '#1f5f2a', '#13531f', '#084111', '#032b09', '#000000']"
+
+  # API：作者强烈建议你自建后端（更稳定）
+  api: https://github-calendar-api.meta-code.top/api
+
+  # 强烈建议把 JS 放本地（避免 cdn 失效/被墙/加载慢）
+  calendar_js: /CDN/hexo_githubcalendar.js # 本地文件，请下载到主题文件夹的source目录下
+
+  plus_style: ""

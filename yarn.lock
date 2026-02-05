@@ -43,6 +43,11 @@
     "@babel/helper-string-parser" "^7.27.1"
     "@babel/helper-validator-identifier" "^7.28.5"
 
+"@barry-flynn/hexo-github-calendar@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.npmmirror.com/@barry-flynn/hexo-github-calendar/-/hexo-github-calendar-1.0.4.tgz"
+  integrity sha512-5rjifVaoH5BMuG+NcIKNHsv0PHkn5Egvc4VNe5NRR6NUy6OYKJbQM6l4l3HIwHcXYRxtbqJ+eRcrXdHX1BG6mA==
+
 "@csstools/color-helpers@^5.1.0":
   version "5.1.0"
   resolved "https://registry.npmmirror.com/@csstools/color-helpers/-/color-helpers-5.1.0.tgz"
@@ -893,6 +898,11 @@ hexo-util@^4.0.0:
     htmlparser2 "^10.0.0"
     prismjs "^1.29.0"
     strip-indent "^3.0.0"
+
+hexo-wordcount@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.npmmirror.com/hexo-wordcount/-/hexo-wordcount-6.0.1.tgz"
+  integrity sha512-tbo2P9xRWEKQmRf7+XuPjx9It1MnaE26nA+EEb2DN39gK1x+26W7Nm4Iyp4AugQjBWYYDx7OLn4gp1WFxQpQew==
 
 hexo@^8.0.0:
   version "8.1.1"

@@ -1,0 +1,11 @@
+top:
+  - class_name: widget-clock
+    id_name: widget-clock
+    name: 指针时钟
+    icon: fas fa-clock
+    html: '<div class="analog-clock-widget"><div class="clock"><div class="hour"></div><div class="min"></div><div class="sec"></div></div></div>'
+  - class_name: card-widget user-weather
+    id_name: user-weather
+    name: 今日天气
+    icon: fas fa-cloud-sun
+    html: '<iframe width="120%" height="100" src="https://i.tianqi.com/?c=code&a=getcode&id=35&site=34&icon=1" frameborder="0"></iframe>'
