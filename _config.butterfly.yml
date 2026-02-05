@@ -946,10 +946,11 @@ abcjs:
 
 # Mermaid
 # https://github.com/mermaid-js/mermaid
+# 有BUG，启用后首页下方出现大量js代码作为文本显示，暂时禁用
 mermaid:
-  enable: true
+  enable: false
   # Write Mermaid diagrams using code blocks
-  code_write: true
+  code_write: false
   # built-in themes: default / forest / dark / neutral
   theme:
     light: default
@@ -1075,7 +1076,6 @@ inject:
     # - <link rel="stylesheet" href="/xxx.css">
     - <link rel="stylesheet" href="/css/custom.css">
     - <link rel="stylesheet" href="/css/clock-widget.css">
-    - <script src="/CDN/hexo_githubcalendar.js"></script>
   bottom: 
     # - <script src="xxxx"></script>
     - <script src="/js/index-top.js"></script>
