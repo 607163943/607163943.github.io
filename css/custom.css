@@ -5,7 +5,7 @@
 
 /* 浅色模式背景图 */
 #web_bg {
-  background: url("/images/bg.png") center center / cover no-repeat fixed;
+  background: url("./../images/bg.png") center center / cover no-repeat fixed;
 }
 
 /* 深色模式：全局卡片背景 */
@@ -15,5 +15,5 @@
 
 /* 深色模式背景图 */
 [data-theme='dark'] #web_bg {
-  background: url("/images/bg-dark.jpg") center center / cover no-repeat fixed;
+  background: url("./../images/bg-dark.jpg") center center / cover no-repeat fixed;
 }
