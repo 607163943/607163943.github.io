@@ -1,9 +1,14 @@
 top:
-  - class_name:
-    id_name:
-    name:
-    icon:
-    html:
+  - class_name: card-clock
+    id_name: clock-widget
+    name: 当前时间
+    icon: fas fa-clock
+    html: '<div class="clock-box"><div class="clock"><div class="hour"></div><div class="min"></div><div class="sec"></div></div></div>'
+  - class_name: card-weather
+    id_name: weather-widget
+    name: 天气
+    icon: fas fa-cloud-sun
+    html: '<iframe width="100%" height="90" src="https://i.tianqi.com/?c=code&a=getcode&id=35&site=34&icon=1" frameborder="0" scrolling="no"></iframe>'
 
 bottom:
   - class_name:
