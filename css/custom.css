@@ -1,0 +1,118 @@
+/* ==================== 模拟时钟卡片样式 ==================== */
+
+/* 时钟外层容器：居中 & 控制上下间距 */
+#clock-widget .clock-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}
+
+/* 时钟主体：缩放至 140px，完美适合侧边栏 */
+#clock-widget .clock {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  background-image: url("https://imvpn22.github.io/analog-clock/clock.png");
+  background-position: center center;
+  background-size: cover;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  box-shadow: 0 -8px 8px rgba(255, 255, 255, 0.05),
+              inset 0 -8px 8px rgba(255, 255, 255, 0.05),
+              0 8px 8px rgba(0, 0, 0, 0.15),
+              inset 0 8px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+/* 中心原点 */
+#clock-widget .clock::before {
+  content: "";
+  height: 8px;
+  width: 8px;
+  background-color: #888888;
+  border: 2px solid #ffffff;
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+/* 指针通用样式 */
+#clock-widget .hour,
+#clock-widget .min,
+#clock-widget .sec {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+/* 时针 */
+#clock-widget .hour {
+  height: 75px;
+  width: 75px;
+}
+#clock-widget .hour::before {
+  content: "";
+  position: absolute;
+  height: 50%;
+  width: 4px;
+  background-color: #555555;
+  border-radius: 4px;
+}
+
+/* 分针 */
+#clock-widget .min {
+  height: 95px;
+  width: 95px;
+}
+#clock-widget .min::before {
+  content: "";
+  position: absolute;
+  height: 50%;
+  width: 3px;
+  background-color: #777777;
+  border-radius: 3px;
+}
+
+/* 秒针 */
+#clock-widget .sec {
+  height: 110px;
+  width: 110px;
+}
+#clock-widget .sec::before {
+  content: "";
+  position: absolute;
+  height: 55%;
+  width: 2px;
+  background-color: #ff4d4f;
+  border-radius: 2px;
+}
+
+/* Butterfly 暗黑模式自动适配 */
+[data-theme="dark"] #clock-widget .clock {
+  background-color: #1e1f26;
+  border-color: #1e1f26;
+  box-shadow: 0 -8px 8px rgba(255, 255, 255, 0.02),
+              inset 0 -8px 8px rgba(255, 255, 255, 0.02),
+              0 8px 8px rgba(0, 0, 0, 0.5),
+              inset 0 8px 8px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] #clock-widget .clock::before {
+  background-color: #cccccc;
+  border-color: #1e1f26;
+}
+
+[data-theme="dark"] #clock-widget .hour::before {
+  background-color: #dddddd;
+}
+
+[data-theme="dark"] #clock-widget .min::before {
+  background-color: #aaaaaa;
+}
