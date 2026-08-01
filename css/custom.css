@@ -8,7 +8,7 @@
   padding: 10px 0;
 }
 
-/* 时钟主体：缩放至 140px，完美适合侧边栏 */
+/* 1. 时钟主体：只对颜色/阴影做 transition，不要对 transform 生效 */
 #clock-widget .clock {
   position: relative;
   width: 140px;
@@ -26,7 +26,8 @@
               inset 0 -8px 8px rgba(255, 255, 255, 0.05),
               0 8px 8px rgba(0, 0, 0, 0.15),
               inset 0 8px 8px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
+  /* 仅对背景和边框做切换动画，避免影响旋转 */
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* 中心原点 */
@@ -42,7 +43,7 @@
   transition: all 0.3s ease;
 }
 
-/* 指针通用样式 */
+/* 2. 指针通用样式：明确移除 transition，让 requestAnimationFrame 完全接管帧渲染 */
 #clock-widget .hour,
 #clock-widget .min,
 #clock-widget .sec {
@@ -50,6 +51,7 @@
   display: flex;
   justify-content: center;
   border-radius: 50%;
+  transition: none !important; /* 关键：禁用过渡效果，实现绝对连续 */
 }
 
 /* 时针 */
