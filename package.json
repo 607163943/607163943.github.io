@@ -12,6 +12,7 @@
     "version": "8.1.2"
   },
   "dependencies": {
+    "@barry-flynn/hexo-github-calendar": "^1.0.4",
     "hexo": "^8.0.0",
     "hexo-deployer-git": "^4.0.0",
     "hexo-generator-archive": "^2.0.0",
