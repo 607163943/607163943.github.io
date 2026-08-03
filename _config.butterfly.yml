@@ -1211,6 +1211,7 @@ inject:
   head:
     - <link rel="stylesheet" href="/css/custom.css"> # 时钟
     - <link rel="stylesheet" href="/css/universe.css"> # 背景宇宙星光
+    - <link rel="stylesheet" href="/css/rightmenu.css"> # 右键菜单
   bottom:
     - <script src="/js/clock.js"></script> # 时钟
     - '<canvas id="universe"></canvas>' # 背景宇宙星光canvas
@@ -1218,6 +1219,8 @@ inject:
     - '<script data-pjax src="/js/hexo_githubcalendar.js"></script>' # GitHub贡献日历js
     - '<script data-pjax src="/js/github_calendar_config.js"></script>' # GitHub贡献日历配置
     - '<style>#github_container{min-height:280px}@media screen and (max-width:650px) {#github_container{background-image:;min-height:0px}}</style>' # GitHub贡献日历样式
+    - <script src="/js/jquery-4.0.0.min.js"></script> # 右键菜单脚本需要使用的jq文件
+    - <script src="/js/rightmenu.js"></script> # 右键菜单rightMenu
 
 # CDN Settings
 # Don't modify the following settings unless you know how they work
