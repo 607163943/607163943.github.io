@@ -119,6 +119,24 @@
   background-color: #aaaaaa;
 }
 
+/* ==================== 暗色主题卡片半透明化 ==================== */
+
+/*
+ * 仅暗色主题下生效，将卡片背景从纯色改为半透明，
+ * 让页面背景透过卡片呈现层次感。
+ * 覆盖 CSS 变量方式，统一影响所有使用 var(--card-bg) 的元素：
+ *   - 侧边栏卡片 (.card-widget)
+ *   - 文章列表卡片 (.recent-post-item)
+ *   - 内容区域 (.layout > div:first-child)
+ *   - 时间线、归档等页面卡片
+ * 卡片内的文字/图片/子元素保持完全不透明，仅背景受影响。
+ */
+
+[data-theme="dark"] {
+  --card-bg: rgba(18, 18, 18, 0.65);
+  --sidebar-bg: rgba(18, 18, 18, 0.65);
+}
+
 /* ==================== 暗色主题悬浮光晕 ==================== */
 
 /*
@@ -138,7 +156,7 @@
 }
 
 [data-theme="dark"] #aside-content .card-widget:hover,
-[data-theme="dark"] #recent-posts .recent-post-item-item:hover,
+[data-theme="dark"] #recent-posts .recent-post-item:hover,
 [data-theme="dark"] .hover-glow-card:hover {
   /* 霓虹边框环 */
   border-color: rgba(50, 140, 255, 0.55);
