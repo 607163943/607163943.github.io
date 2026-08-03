@@ -944,7 +944,10 @@ mask:
 
 # Loading Animation
 preloader:
-  enable: false
+  enable: true
+  load_color: 'radial-gradient(#353c44, #222931)' #'#000000' # '#37474f'
+  load_style: gooey # default|gear|ironheart|scarecrow|triangles|wizard|image|gooey
+  load_image:  # url
   # source
   # 1. fullpage-loading
   # 2. pace (progress bar)
