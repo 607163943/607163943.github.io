@@ -31,22 +31,20 @@ rmf.switchDarkMode = function(){
     window.DISQUS && document.getElementById('disqus_thread').children.length && setTimeout(() => window.disqusReset(), 200)
 };
 
-// 阅读模式
-rmf.switchReadMode = function(){
-    const $body = document.body
-    $body.classList.add('read-mode')
-    const newEle = document.createElement('button')
-    newEle.type = 'button'
-    newEle.className = 'fas fa-sign-out-alt exit-readmode'
-    $body.appendChild(newEle)
+// 动态更新菜单文本
+rmf.updateMenuText = function(){
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark'
+    const isHideAside = document.documentElement.classList.contains('hide-aside')
+    document.getElementById('menu-darkmode-text').textContent = isDark ? '日间模式' : '夜间模式'
+    document.getElementById('menu-aside-text').textContent = isHideAside ? '显示侧栏' : '隐藏侧栏'
+}
 
-    function clickFn () {
-        $body.classList.remove('read-mode')
-        newEle.remove()
-        newEle.removeEventListener('click', clickFn)
-    }
-
-    newEle.addEventListener('click', clickFn)
+// 隐藏/显示侧栏
+rmf.toggleSidebar = function(){
+    const $htmlDom = document.documentElement.classList
+    const saveStatus = $htmlDom.contains('hide-aside') ? 'show' : 'hide'
+    btf.saveToLocal.set('aside-status', saveStatus, 2)
+    $htmlDom.toggle('hide-aside')
 }
 
 //复制选中文字
@@ -83,6 +81,7 @@ if(! (navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mob
 
 
 
+        rmf.updateMenuText();
         rmf.showRightMenu(true, pageY, pageX);
         return false;
     };
