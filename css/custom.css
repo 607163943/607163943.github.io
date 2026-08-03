@@ -138,7 +138,7 @@
 }
 
 [data-theme="dark"] #aside-content .card-widget:hover,
-[data-theme="dark"] #recent-posts .recent-post-item:hover,
+[data-theme="dark"] #recent-posts .recent-post-item-item:hover,
 [data-theme="dark"] .hover-glow-card:hover {
   /* 霓虹边框环 */
   border-color: rgba(50, 140, 255, 0.55);
@@ -147,4 +147,9 @@
               0 0 18px rgba(50, 140, 255, 0.25),
               0 0 34px rgba(50, 140, 255, 0.07),
               inset 0 0 12px rgba(50, 140, 255, 0.18);
+}
+
+/* ==================== 隐藏 GitHub 日历悬浮提示 ==================== */
+.gitmessage {
+  display: none !important;
 }
