@@ -65,7 +65,7 @@ social:
 # --------------------------------------
 
 # 网站的 favicon 图标
-favicon: /img/favicon.jpg
+favicon: /img/ico.svg
 
 # 头像设置
 avatar:
@@ -92,7 +92,7 @@ avatar:
 disable_top_img: false
 
 # 如果页面未设置横幅，则显示默认的横幅图片
-default_top_img: 'linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347)'
+default_top_img: 'linear-gradient(120deg, #5ba899 0%, #6ba3b0 50%, #b89570 100%)'
 
 # 主页的横幅图片
 index_img:
@@ -946,7 +946,7 @@ mask:
 preloader:
   enable: true
   load_color: 'radial-gradient(#353c44, #222931)' #'#000000' # '#37474f'
-  load_style: gooey # default|gear|ironheart|scarecrow|triangles|wizard|image|gooey
+  load_style: starweb # default|gear|ironheart|scarecrow|triangles|wizard|image|gooey|starweb
   load_image:  # url
   # source
   # 1. fullpage-loading
@@ -1005,7 +1005,7 @@ activate_power_mode:
 # canvas_ribbon
 # See: https://github.com/hustcc/ribbon.js
 canvas_ribbon:
-  enable: true
+  enable: false
   # The size of ribbon
   size: 150
   # The opacity of ribbon (0 ~ 1)
@@ -1224,6 +1224,8 @@ inject:
     - '<style>#github_container{min-height:280px}@media screen and (max-width:650px) {#github_container{background-image:;min-height:0px}}</style>' # GitHub贡献日历样式
     - <script src="/js/jquery-4.0.0.min.js"></script> # 右键菜单脚本需要使用的jq文件
     - <script src="/js/rightmenu.js"></script> # 右键菜单rightMenu
+    - <script src="/js/starweb-loading.js"></script> # 加载动画星空粒子（暗色）
+    - <script src="/js/loading-geo.js"></script> # 加载动画几何网格（亮色）
 
 # CDN Settings
 # Don't modify the following settings unless you know how they work

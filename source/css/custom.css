@@ -39,7 +39,7 @@
   border: 2px solid #ffffff;
   position: absolute;
   border-radius: 50%;
-  z-index: 1000;
+  z-index: 1;
   transition: all 0.3s ease;
 }
 
@@ -133,8 +133,22 @@
  */
 
 [data-theme="dark"] {
-  --card-bg: rgba(18, 18, 18, 0.65);
-  --sidebar-bg: rgba(18, 18, 18, 0.65);
+  --card-bg: rgba(18, 18, 18, 0.97);
+  --sidebar-bg: rgba(18, 18, 18, 0.97);
+}
+
+/* ==================== 暗色主题卡片提升层级（遮盖背景流星） ==================== */
+
+/*
+ * 将卡片容器提升到 universe canvas (z-index: 0) 之上，
+ * 使流星粒子被卡片遮挡，不影响文章阅读。
+ * 不提升 #page-header (Banner)，保持其透明可见流星效果。
+ * 不提升 #nav (z-index: 91)，避免干扰导航栏。
+ */
+[data-theme="dark"] .layout > div:first-child,
+[data-theme="dark"] #aside-content .card-widget {
+  position: relative;
+  z-index: 1;
 }
 
 /* ==================== 暗色主题悬浮光晕 ==================== */
@@ -158,16 +172,69 @@
 [data-theme="dark"] #aside-content .card-widget:hover,
 [data-theme="dark"] #recent-posts .recent-post-item:hover,
 [data-theme="dark"] .hover-glow-card:hover {
-  /* 霓虹边框环 */
-  border-color: rgba(50, 140, 255, 0.55);
-  /* 三层外发光：亮核 → 快速过渡 → 边缘淡出 + 内侧微光 */
-  box-shadow: 0 0 8px rgba(50, 140, 255, 0.55),
-              0 0 18px rgba(50, 140, 255, 0.25),
-              0 0 34px rgba(50, 140, 255, 0.07),
-              inset 0 0 12px rgba(50, 140, 255, 0.18);
+  /* 霓虹边框环 — 夜风青蓝 */
+  border-color: rgba(56, 189, 248, 0.55);
+  /* 三层外发光：冰蓝亮核 → 蒂芙尼青过渡 → 边缘淡出 + 内侧微光 */
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.55),
+              0 0 18px rgba(56, 189, 248, 0.25),
+              0 0 34px rgba(45, 212, 191, 0.07),
+              inset 0 0 12px rgba(56, 189, 248, 0.18);
 }
 
 /* ==================== 隐藏 GitHub 日历悬浮提示 ==================== */
 .gitmessage {
   display: none !important;
+}
+
+/* ==================== 亮色/暗色主题网页背景 ==================== */
+
+/* 亮色主题：使用 CSS 渐变替代背景图片 */
+body {
+  background-color: hsla(39,80%,96%,1);
+  background-image:
+    radial-gradient(at 86% 22%, hsla(35,84%,86%,0.38) 0px, transparent 50%),
+    radial-gradient(at 41% 85%, hsla(48,89%,90%,0.48) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, hsla(190,45%,86%,0.18) 0px, transparent 50%),
+    radial-gradient(at 80% 50%, hsla(48,0%,98%,0.75) 0px, transparent 50%);
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* ==================== 亮色主题 Banner 覆盖 ==================== */
+
+/*
+ * 覆盖 Butterfly 主题的 default_top_img 内联样式，
+ * 使用 light-top-banner.jpg 作为亮色主题的 Banner 背景图。
+ * 暗色主题的 Banner 通过下方 [data-theme="dark"] 选择器单独覆盖。
+ */
+#page-header {
+  background-image: url('/img/light-top-banner.jpg') !important;
+  background-position: center center;
+  background-size: cover;
+}
+
+/* ==================== 暗色主题 Banner 覆盖 ==================== */
+
+/*
+ * Butterfly 主题的 default_top_img 会渲染为 #page-header 的 inline style，
+ * 亮色/暗色主题共用同一个。这里用 !important 为暗色主题单独覆盖 Banner 样式。
+ */
+[data-theme="dark"] #page-header {
+  background: linear-gradient(135deg, #0d1117 0%, #0d1117 25%, #132e38 55%, #1b5266 85%, #22738f 100%) !important;
+}
+
+/* 暗色主题：使用 CSS 渐变替代背景图片 */
+[data-theme="dark"] body {
+  background-color: hsla(220, 30%, 8%, 1);
+  background-image:
+    radial-gradient(at 16% 13%, hsla(213, 39%, 12%, 1) 0px, transparent 50%),
+    radial-gradient(at 68% 45%, hsla(163, 85%, 50%, 0.3) 0px, transparent 50%),
+    radial-gradient(at 80% 100%, hsla(243, 65%, 25%, 0.4) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, hsla(183, 80%, 30%, 0.5) 0px, transparent 50%);
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
