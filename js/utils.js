@@ -74,9 +74,10 @@
         add: () => {
           const paddingRight = window.innerWidth - document.body.clientWidth
 
+          document.body.style.overflow = 'hidden'
+          document.body.style.overscrollBehavior = 'contain'
           if (paddingRight > 0) {
             document.body.style.paddingRight = `${paddingRight}px`
-            document.body.style.overflow = 'hidden'
             const { headerElement: header, menuElement: menu } = getElements()
             if (header && menu && header.classList.contains('nav-fixed')) {
               menu.style.paddingRight = `${paddingRight}px`
@@ -86,6 +87,7 @@
         remove: () => {
           document.body.style.paddingRight = ''
           document.body.style.overflow = ''
+          document.body.style.overscrollBehavior = ''
           const { headerElement: header, menuElement: menu } = getElements()
           if (header && menu && header.classList.contains('nav-fixed')) {
             menu.style.paddingRight = ''
